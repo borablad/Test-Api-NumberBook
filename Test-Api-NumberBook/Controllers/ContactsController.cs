@@ -37,14 +37,14 @@ namespace Test_Api_NumberBook.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateContact(Contact contact)
         {
-            await _service.AddContactAsync(contact); // Добавление контакта через сервис / Adds contact via service
-                                                     // Возвращает статус 201 и путь для получения созданного контакта / Returns 201 status and path to access created contact
+            await _service.AddContactAsync(contact); 
+            // Возвращает статус 201 и путь для получения созданного контакта / Returns 201 status and path to access created contact
             return CreatedAtAction(nameof(GetContact), new { id = contact.Id }, contact);
         }
 
         // Метод для обновления информации о существующем контакте / Method to update an existing contact's information
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateContact(int id, Contact contact)
+        public async Task<IActionResult> UpdateContact(Guid id, Contact contact)
         {
             if (id != contact.Id)
                 return BadRequest(); // Возвращает статус 400, если ID не совпадают / Returns 400 status if IDs do not match
