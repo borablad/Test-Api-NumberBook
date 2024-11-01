@@ -22,7 +22,7 @@ namespace Test_Api_NumberBook.Services
         }
 
         // Метод для получения контакта по ID / Method to retrieve a contact by its ID
-        public Task<Contact> GetContactByIdAsync(int id)
+        public Task<Contact> GetContactByIdAsync(Guid id)
         {
             return _repository.GetByIdAsync(id);
         }
@@ -40,7 +40,7 @@ namespace Test_Api_NumberBook.Services
         }
 
         // Метод для удаления контакта по ID / Method to delete a contact by its ID
-        public Task DeleteContactAsync(int id)
+        public Task DeleteContactAsync(Guid id)
         {
             return _repository.DeleteAsync(id);
         }

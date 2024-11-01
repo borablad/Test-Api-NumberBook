@@ -25,7 +25,7 @@ namespace Test_Api_NumberBook.Controllers
 
         // Метод для получения контакта по ID / Method to retrieve a contact by its ID
         [HttpGet("{id}")]
-        public async Task<ActionResult<Contact>> GetContact(int id)
+        public async Task<ActionResult<Contact>> GetContact(Guid id)
         {
             var contact = await _service.GetContactByIdAsync(id);
             if (contact == null)
@@ -56,7 +56,7 @@ namespace Test_Api_NumberBook.Controllers
 
         // Метод для удаления контакта по ID / Method to delete a contact by its ID
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteContact(int id)
+        public async Task<IActionResult> DeleteContact(Guid id)
         {
             await _service.DeleteContactAsync(id); // Удаление контакта через сервис / Deletes contact via service
             return NoContent(); // Возвращает статус 204 после успешного удаления / Returns 204 status upon successful deletion

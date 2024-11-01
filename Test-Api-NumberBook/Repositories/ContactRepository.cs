@@ -27,7 +27,7 @@ namespace Test_Api_NumberBook.Repositories
         }
 
         // Метод для получения контакта по его уникальному ID / Method to retrieve a contact by its unique ID
-        public async Task<Contact> GetByIdAsync(int id)
+        public async Task<Contact> GetByIdAsync(Guid id)
         {
             return await _context.Contacts.FindAsync(id);
         }
@@ -47,7 +47,7 @@ namespace Test_Api_NumberBook.Repositories
         }
 
         // Метод для удаления контакта по его уникальному ID / Method to delete a contact by its unique ID
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
             var contact = await GetByIdAsync(id);
             if (contact != null)
