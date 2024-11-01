@@ -2,7 +2,7 @@
 {
     public class Contact
     {
-        public Guid Id { get; set; } = Guid.NewGuid();             // ID для идентификации контакта / ID for contact identification
+        public Guid Id { get; set; }             // ID для идентификации контакта / ID for contact identification
         public string FirstName { get; set; }    // Имя / Name
         public string LastName { get; set; }     // Фамилия / LastName
         public string PhoneNumber { get; set; }  // Номер телефона / Phone number

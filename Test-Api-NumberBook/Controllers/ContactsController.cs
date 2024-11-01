@@ -37,6 +37,7 @@ namespace Test_Api_NumberBook.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateContact(Contact contact)
         {
+            contact.Id = Guid.NewGuid();
             await _service.AddContactAsync(contact); 
             // Возвращает статус 201 и путь для получения созданного контакта / Returns 201 status and path to access created contact
             return CreatedAtAction(nameof(GetContact), new { id = contact.Id }, contact);
